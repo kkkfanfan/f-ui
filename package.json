@@ -1,0 +1,32 @@
+{
+  "name": "fan-vue3-ui",
+  "private": false,
+  "version": "1.0.18",
+  "type": "module",
+  "mian": "./dist/fan-vue3-ui.umd.cjs",
+  "module": "./dist/fan-vue3-ui.js",
+  "exports": {
+    ".": {
+      "import": "./dist/fan-vue3-ui.js",
+      "require": "./dist/fan-vue3-ui.umd.cjs"
+    }
+  },
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "faker": "^6.6.6",
+    "json-schema-faker": "^0.5.3",
+    "less": "^4.1.3",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.4.0"
+  }
+}
