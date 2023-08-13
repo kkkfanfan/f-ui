@@ -1,7 +1,7 @@
 {
   "name": "fan-vue3-ui",
   "private": false,
-  "version": "1.0.18",
+  "version": "1.0.19",
   "type": "module",
   "mian": "./dist/fan-vue3-ui.umd.cjs",
   "module": "./dist/fan-vue3-ui.js",
@@ -18,8 +18,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build:f-ui":"gulp -f package/script/build/index.js",
-    "publish:f-ui":"gulp -f package/script/publish/index.js"
+    "build:f-ui": "gulp -f package/script/build/index.js",
+    "publish:f-ui": "gulp -f package/script/publish/index.js"
   },
   "dependencies": {
     "faker": "^6.6.6",
