@@ -11,7 +11,9 @@ import fVirtualList from './virtual-list/index'
 import Test from './test/index'
 import fLazy from "./lazyLoading/index";
 import fVirtualListPlus from "./virtual-list-plus";
+import form from "./form/index";
 import { useBase64 } from './hooks/index'
+const { fForm, fFormItem } = form
 
 const install = (app) => {
   app.use(fSkeleton)
@@ -27,10 +29,12 @@ const install = (app) => {
   app.use(Test)
   app.use(fLazy)
   app.use(fVirtualListPlus)
+  app.use(fFormItem)
+  app.use(fForm)
 }
 export {
   fSkeleton, useBase64, fButton, fIcon, fInput, fCarousel, fPagination, fLogin
-  , fRegister, fVerify, fVirtualList, fLazy, fVirtualListPlus
+  , fRegister, fVerify, fVirtualList, fLazy, fVirtualListPlus, fFormItem, fForm
 }
 
 export default {

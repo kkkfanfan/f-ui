@@ -1,10 +1,13 @@
 <template>
-  <input  @input="inputChange" class="f-input" :placeholder="pla" :class="styleCss"/>
+  <input @blur="blurEvent" :type="type"   @input="inputChange" class="f-input" :placeholder="pla" :class="styleCss"/>
 </template>
   
 <script setup >
 
+import { inject } from 'vue';
 import {computed} from 'vue'
+import { formItemContextKey } from '../form/src/form-item';
+import { watch } from 'vue';
 defineOptions({
   name:'f-input'
 })
@@ -20,8 +23,13 @@ defineOptions({
   modelValue:{
     type:String,
     default:""
+  },
+  type:{
+    type:String,
+    default:'text'
   }
  })
+
 const pla=computed(()=>{
   return props.placeholder
 })
@@ -32,7 +40,13 @@ const styleCss=computed(()=>{
 const emits=defineEmits(['update:modelValue'])
 const inputChange=(e)=>{
   emits('update:modelValue',e.target.value)
+  formItemContext?.validate('change')
 }
+
+const blurEvent=(e)=>{
+  formItemContext.validate('blur')
+}
+const formItemContext=inject(formItemContextKey)
 </script>
  
 <style scoped lang="less">

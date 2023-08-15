@@ -22,6 +22,7 @@
     "publish:f-ui": "gulp -f package/script/publish/index.js"
   },
   "dependencies": {
+    "async-validator": "^4.2.5",
     "faker": "^6.6.6",
     "json-schema-faker": "^0.5.3",
     "less": "^4.1.3",

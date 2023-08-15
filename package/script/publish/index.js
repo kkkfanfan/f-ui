@@ -20,6 +20,9 @@ const run = (command) => {
 const publish = async () => {
   await run('git add .')
   await run('git commit -m "publish to npm" ')
+  /*这两行是为了处理Git working directory not clean.这个问题
+  README.md 文件和 package.json 以及构建的文件需要在发布之前提交
+  */
   await run('npm version patch')
   await run('npm publish')
 }
