@@ -1,7 +1,7 @@
 {
   "name": "fan-vue3-ui",
   "private": false,
-  "version": "1.0.19",
+  "version": "1.0.20",
   "type": "module",
   "mian": "./dist/fan-vue3-ui.umd.cjs",
   "module": "./dist/fan-vue3-ui.js",
