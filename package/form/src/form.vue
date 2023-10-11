@@ -19,6 +19,7 @@ import { FormItemContext } from './form-item';
   let errors={}
   fileds.forEach(async item=>{
     await item.validate('blur')
+    await item.validate('change')
   })  
   // if(Object.keys(errors).length===0) return callback?.(true)
   // callback?.(false,errors)

@@ -1,13 +1,13 @@
 <template>
   
-  <!-- <f-virtual-list-plus :data="data" :dynamic="true" >
+  <f-virtual-list-plus :data="data" :dynamic="true" >
     <template v-slot="{item}">
       <div class="item">
         <span :style="{color:'red',marginRight:10+'px'}">{{ item.id }}</span><span>{{ item.value }}</span>
       </div>
     </template>
-  </f-virtual-list-plus> -->
-  <f-form :model="state" :rules="{
+  </f-virtual-list-plus>
+  <!-- <f-form :model="state" :rules="{
     username:{required:true,message:'请输入用户名',trigger:'blur'},
   }" ref="form">
 
@@ -26,26 +26,34 @@
       <template #label></template>
     </f-form-item>
     <f-button round @click="validate">校验</f-button>
-  </f-form>
+  </f-form> -->
+  <f-verify :imgSrc="img" v-if="visible" @refresh="refresh"></f-verify>
 </template>
   
 <script setup >
 import {reactive,ref} from 'vue'
-const state=reactive({username:'',password:''})
-const form=ref()
-
-const validate=()=>{
-  form.value.validate()
-}
-// import faker from 'faker'
-
-// let data = [];
-// for (let id = 0; id < 10000; id++) {
-//   data.push({
-//     id,
-//     value:faker.lorem.sentences() // 长文本
+import img from '@/assets/bg.png'
+// const state=reactive({username:'',password:''})
+// const form=ref()
+// const visible=ref(true)
+// const refresh=()=>{
+//   setTimeout(()=>{
+//     refresh.value=true
 //   })
+//   refresh.value=false
 // }
+// const validate=()=>{
+//   form.value.validate()
+// }
+import faker from 'faker'
+
+let data = [];
+for (let id = 0; id < 10000; id++) {
+  data.push({
+    id,
+    value:faker.lorem.sentences() // 长文本
+  })
+}
 
 </script>
  
